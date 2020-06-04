@@ -17,6 +17,11 @@ const Scroll = callbacks => {
     // Exposing to the global scope for ease of use.
     window.scroll = locomotiveScroll
 
+    locomotiveScroll.on("scroll", func => {
+      // Update `data-direction` with scroll direction.
+      document.documentElement.setAttribute("data-direction", func.direction)
+    })
+
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy()
     }

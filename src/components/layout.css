@@ -620,3 +620,9 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/*  */
+
+html[data-direction="down"] .header {
+  transform: translateY(-100%);
+}

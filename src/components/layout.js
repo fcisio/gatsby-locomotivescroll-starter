@@ -34,10 +34,11 @@ const Layout = ({ children, location }) => {
       <Scroll callbacks={location} />
 
       <div
+        id="container"
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          padding: `120px 1.45rem 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>

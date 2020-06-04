@@ -4,29 +4,46 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header
+    data-scroll
+    data-scroll-sticky
+    data-scroll-target="#container"
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      width: `100%`,
+      position: `fixed`,
+      top: 0,
+      left: 0,
+      zIndex: 10,
     }}
   >
     <div
+      className="header"
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        background: `rebeccapurple`,
+        transition: `transform 0.35s ease`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `0 1.0875rem`,
+          height: `80px`,
+          display: `flex`,
+          alignItems: `center`,
+        }}
+      >
+        <h1 style={{ fontSize: `30px`, margin: 0 }}>
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+      </div>
     </div>
   </header>
 )
