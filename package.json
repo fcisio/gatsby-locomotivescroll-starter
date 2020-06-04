@@ -13,6 +13,7 @@
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-transformer-sharp": "^2.5.3",
+    "gsap": "^3.3.0",
     "locomotive-scroll": "^3.5.4",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
