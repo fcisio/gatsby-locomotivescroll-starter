@@ -30,7 +30,7 @@ const collapsible = node => {
   return { open, close }
 }
 
-const Collapsible = ({ opened, children, ...props }) => {
+const Collapsible = ({ children }) => {
   const [state, setState] = useState({
     initial: false,
     clicked: null,
@@ -57,14 +57,14 @@ const Collapsible = ({ opened, children, ...props }) => {
 
   useEffect(() => {
     if (state.clicked === false) {
-      opened ? collapsible(body).open() : collapsible(body).close()
+      collapsible(body).close()
     } else if (
       state.clicked === true ||
       (state.clicked === true && state.initial === null)
     ) {
-      opened ? collapsible(body).close() : collapsible(body).open()
+      collapsible(body).open()
     }
-  }, [state, opened])
+  }, [state])
 
   return (
     <button className="Collapse" onClick={() => handleClick()}>
