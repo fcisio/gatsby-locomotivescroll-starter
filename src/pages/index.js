@@ -18,7 +18,10 @@ const IndexPage = () => (
     </p>
     <p>
       In our case <code>window.scroll.update()</code>.{" "}
-      <a href="3">See the `collapsible` component</a>.
+      <a href="https://github.com/fcisio/gatsby-locomotivescroll-starter/blob/master/src/components/collapsible.js">
+        See the `collapsible` component
+      </a>
+      .
     </p>
     <Collapsible>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. A libero
