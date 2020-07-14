@@ -13,19 +13,15 @@ const collapsible = node => {
     },
   })
 
-  //! We call this method after every change that impacts the page height.
-  const animation = tl
-    .call(() => updateScroll())
-    .fromTo(
-      node,
-      { height: 0, willChange: "height" },
-      { height: "auto", clearProps: "willChange" }
-    )
-    .call(() => updateScroll())
-    .pause()
+  const animation = height =>
+    tl
+      .to(node, { height: height, willChange: "height" })
+      .to(node, { clearProps: "willChange" }, "-=0.45")
+      .call(() => updateScroll()) //! We call this method after every change that impacts the page height.
+      .pause()
 
-  let open = () => animation.play()
-  let close = () => animation.reverse(0)
+  let open = () => animation("auto").play()
+  let close = () => animation(0).play()
 
   return { open, close }
 }
